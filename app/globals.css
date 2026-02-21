@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  /* Typography: 1.6 golden ratio line-height, larger base for readability */
+  --line-height: 1.6;
+  --text-base: 1.125rem; /* 18px - larger than default 16px */
+  --font-sans: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--line-height);
+}
+
+/* Apply golden ratio and base size to common text elements */
+p, li, td, th {
+  line-height: var(--line-height);
+}
