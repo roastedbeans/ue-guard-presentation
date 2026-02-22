@@ -12,6 +12,7 @@ import Layer2StateAnimation from "@/components/Layer2StateAnimation";
 import DecisionProcessAnimation from "@/components/DecisionProcessAnimation";
 import PerformanceBarChart from "@/components/PerformanceBarChart";
 import ResultsBarChart from "@/components/ResultsBarChart";
+import CodeBlock from "@/components/CodeBlock";
 import { SLIDES } from "@/lib/slides";
 import { emphasize } from "@/lib/emphasize";
 
@@ -220,8 +221,8 @@ export default function PresentationPage() {
               <p className="text-xs font-semibold text-zinc-600 mb-2 uppercase tracking-wider">
                 Pseudocode (document/spec_verification.xml)
               </p>
-              <pre className="text-xs font-mono text-zinc-700 bg-zinc-100 p-4 rounded border border-zinc-200 w-4xl min-h-[28rem] max-h-[41rem] overflow-auto">
-{`// GOAL: Detect FBS violations; set ASI bit i when BR-(i+1) violated
+              <CodeBlock
+                code={`// GOAL: Detect FBS violations; set ASI bit i when BR-(i+1) violated
 
 // RRC rules (BR-1 to BR-7)
 checkBR01: if msg == RRC_REESTABLISH || RRC_RECONFIG
@@ -266,7 +267,8 @@ checkBR13: if msg is REJECT
 
 checkBR14: if msg == DETACH_REQUEST (downlink)
            && !integrity_protected → abnormal`}
-              </pre>
+                className="w-4xl min-h-[28rem] max-h-[41rem]"
+              />
             </div>
           </div>
         </ContentSlide>
@@ -295,8 +297,8 @@ checkBR14: if msg == DETACH_REQUEST (downlink)
               <p className="text-xs font-semibold text-zinc-600 mb-2 uppercase tracking-wider">
                 Pseudocode (document/spec_verification.xml)
               </p>
-              <pre className="text-xs font-mono text-zinc-700 bg-zinc-100 p-4 rounded border border-zinc-200 w-4xl min-h-[28rem] max-h-[41rem] overflow-auto">
-{`// GOAL: Verify that when a BR violation occurs, Detection_Agent correctly
+              <CodeBlock
+                code={`// GOAL: Verify that when a BR violation occurs, Detection_Agent correctly
 //       sets the corresponding ASI bit. No_error = correct; Error = missed.
 
 // Parameterized template: one checker per BR
@@ -314,7 +316,8 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
 
 // 14 checkers: checker0..checker13 for BR-1..BR-14
 // Reachability of No_error proves: every attack is detectable`}
-              </pre>
+                className="w-4xl min-h-[28rem] max-h-[41rem]"
+              />
             </div>
           </div>
         </ContentSlide>
@@ -517,9 +520,11 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                 </p>
               </div>
               <p className="text-sm font-medium text-zinc-600 mb-2">Decision logic</p>
-              <pre className="text-base font-mono bg-zinc-100 border border-zinc-200 rounded-lg p-4 overflow-x-auto w-lg">
-{((SLIDES[14] as { decision: string[] }).decision || []).join("\n")}
-              </pre>
+              <CodeBlock
+                code={((SLIDES[14] as { decision: string[] }).decision || []).join("\n")}
+                size="base"
+                className="w-lg overflow-x-auto"
+              />
             </div>
             <div className="w-full lg:min-w-[22rem] lg:w-[26rem] xl:w-[30rem] shrink-0">
               <DecisionProcessAnimation />
