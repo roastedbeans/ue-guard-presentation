@@ -4,13 +4,11 @@ export default function AgendaSlide({
   id,
   number,
   label,
-  time,
   items,
 }: {
   id: string;
   number: string;
   label: string;
-  time?: string;
   items: string[];
 }) {
   return (
@@ -19,7 +17,7 @@ export default function AgendaSlide({
         className="flex flex-col justify-center px-8 md:px-16 lg:px-24"
         style={{ height: "100vh", lineHeight: 1.6 }}
       >
-        <SectionHeader number={number} label={label} heading="Agenda" time={time} />
+        <SectionHeader number={number} label={label} heading="Agenda" />
         <ol className="space-y-4 text-base text-zinc-700 max-w-xl">
           {items.map((item, i) => (
             <li key={i} className="flex gap-3">

@@ -7,7 +7,6 @@ export default function TableSlide({
   number,
   label,
   heading,
-  time,
   columns,
   rows,
   keyGap,
@@ -17,7 +16,6 @@ export default function TableSlide({
   number: string;
   label: string;
   heading: string;
-  time?: string;
   columns: Column[];
   rows: Record<string, string | number>[];
   keyGap?: string;
@@ -29,7 +27,7 @@ export default function TableSlide({
         className="flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-y-auto"
         style={{ height: "100vh", lineHeight: 1.6 }}
       >
-        <SectionHeader number={number} label={label} heading={heading} time={time} />
+        <SectionHeader number={number} label={label} heading={heading} />
         <div className="flex gap-12 justify-between items-start w-full max-w-6xl">
           <div className="flex-1 w-2xl min-w-2xl shrink-0">
             <table className="w-full text-base border-collapse">

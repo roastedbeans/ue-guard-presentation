@@ -5,16 +5,31 @@ type Section = { id: string; number: string; label: string };
 export default function SlideNav({
   sections,
   active,
+  onPrev,
+  onNext,
+  scrollTo,
 }: {
   sections: Section[];
   active: string;
+  onPrev?: () => void;
+  onNext?: () => void;
+  scrollTo?: (id: string) => void;
 }) {
   const activeIndex = sections.findIndex((s) => s.id === active);
 
-  function scrollTo(id: string) {
+  function defaultScrollTo(id: string) {
+    const container = document.getElementById("scroll-container");
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!container || !el) return;
+    const top = container.scrollTop + el.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTo({ top, behavior: "smooth" });
   }
+
+  const scrollToSection = scrollTo ?? defaultScrollTo;
+  const handlePrev = onPrev ?? (() => activeIndex > 0 && scrollToSection(sections[activeIndex - 1].id));
+  const handleNext = onNext ?? (() => activeIndex < sections.length - 1 && scrollToSection(sections[activeIndex + 1].id));
+  const canPrev = activeIndex > 0;
+  const canNext = activeIndex < sections.length - 1;
 
   return (
     <nav
@@ -22,11 +37,9 @@ export default function SlideNav({
       aria-label="Slide navigation"
     >
       <button
-        onClick={() =>
-          activeIndex > 0 && scrollTo(sections[activeIndex - 1].id)
-        }
+        onClick={handlePrev}
         className={`text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-mono ${
-          activeIndex === 0 ? "opacity-0 pointer-events-none" : ""
+          !canPrev ? "opacity-0 pointer-events-none" : ""
         }`}
         aria-label="Previous slide"
       >
@@ -37,7 +50,7 @@ export default function SlideNav({
         return (
           <button
             key={s.id}
-            onClick={() => scrollTo(s.id)}
+            onClick={() => scrollToSection(s.id)}
             className="group flex items-center gap-3"
             aria-label={`Go to ${s.label}`}
           >
@@ -59,14 +72,9 @@ export default function SlideNav({
         );
       })}
       <button
-        onClick={() =>
-          activeIndex < sections.length - 1 &&
-          scrollTo(sections[activeIndex + 1].id)
-        }
+        onClick={handleNext}
         className={`text-zinc-500 hover:text-zinc-900 transition-colors text-sm font-mono mt-1 ${
-          activeIndex === sections.length - 1
-            ? "opacity-0 pointer-events-none"
-            : ""
+          !canNext ? "opacity-0 pointer-events-none" : ""
         }`}
         aria-label="Next slide"
       >

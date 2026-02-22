@@ -35,7 +35,6 @@ export default function PresentationPage() {
           id={(SLIDES[1] as { id: string }).id}
           number={SLIDES[1].number}
           label={SLIDES[1].label}
-          time={SLIDES[1].time}
           items={(SLIDES[1] as { items: string[] }).items}
         />
 
@@ -44,7 +43,6 @@ export default function PresentationPage() {
           number={SLIDES[2].number}
           label={SLIDES[2].label}
           heading={SLIDES[2].heading}
-          time={SLIDES[2].time}
           bullets={(SLIDES[2] as { bullets: { main: string; sub: string[] }[] }).bullets}
           visual={<AsymmetricAuthAnimation />}
           emphasizeKeywords={["4G LTE", "5G", "asymmetric authentication", "UE", "False Base Station", "FBS", "IMSI catching", "security downgrade", "illegitimate signaling"]}
@@ -55,7 +53,6 @@ export default function PresentationPage() {
           number={SLIDES[3].number}
           label={SLIDES[3].label}
           heading={SLIDES[3].heading}
-          time={SLIDES[3].time}
           columns={[
             { key: "category", label: "Attack Category" },
             { key: "example", label: "Example" },
@@ -70,7 +67,6 @@ export default function PresentationPage() {
           number={SLIDES[4].number}
           label={SLIDES[4].label}
           heading={SLIDES[4].heading}
-          time={SLIDES[4].time}
           columns={[
             { key: "approach", label: "Approach" },
             { key: "limitation", label: "Limitation" },
@@ -84,7 +80,6 @@ export default function PresentationPage() {
           number={SLIDES[5].number}
           label={SLIDES[5].label}
           heading={SLIDES[5].heading}
-          time={SLIDES[5].time}
           wide
         >
           <div className="flex gap-10 items-stretch w-full">
@@ -123,7 +118,6 @@ export default function PresentationPage() {
           number={SLIDES[6].number}
           label={SLIDES[6].label}
           heading={SLIDES[6].heading}
-          time={SLIDES[6].time}
         >
           <p className="text-zinc-600 text-base mb-4">
             {emphasize((SLIDES[6] as { source: string }).source, ["3GPP", "TS 24.301", "TS 36.331", "TS 38.331"])}
@@ -143,7 +137,6 @@ export default function PresentationPage() {
           number={SLIDES[7].number}
           label={SLIDES[7].label}
           heading={SLIDES[7].heading}
-          time={SLIDES[7].time}
           wide
         >
           <div className="max-w-4xl">
@@ -190,7 +183,6 @@ export default function PresentationPage() {
           number={SLIDES[8].number}
           label={SLIDES[8].label}
           heading={SLIDES[8].heading}
-          time={SLIDES[8].time}
         >
           <p className="text-zinc-700 max-w-2xl">
             {emphasize((SLIDES[8] as { methodology: string }).methodology, ["Layer 1", "timed automata", "UPPAAL", "Layers 2 and 3"])}
@@ -202,7 +194,6 @@ export default function PresentationPage() {
           number={SLIDES[9].number}
           label={SLIDES[9].label}
           heading={SLIDES[9].heading}
-          time={SLIDES[9].time}
           wide
         >
           <div className="max-w-6xl flex gap-6 items-start flex-wrap">
@@ -278,7 +269,6 @@ checkBR14: if msg == DETACH_REQUEST (downlink)
           number={SLIDES[10].number}
           label={SLIDES[10].label}
           heading={SLIDES[10].heading}
-          time={SLIDES[10].time}
           wide
         >
           <div className="max-w-6xl flex gap-6 items-start flex-wrap">
@@ -327,7 +317,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[11].number}
           label={SLIDES[11].label}
           heading={SLIDES[11].heading}
-          time={SLIDES[11].time}
         >
           <table className="w-full text-base border-collapse max-w-xl mb-4">
             <thead>
@@ -359,7 +348,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[12].number}
           label={SLIDES[12].label}
           heading={SLIDES[12].heading}
-          time={SLIDES[12].time}
           wide
         >
           <div className="flex gap-8 items-start">
@@ -428,7 +416,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[13].number}
           label={SLIDES[13].label}
           heading={SLIDES[13].heading}
-          time={SLIDES[13].time}
           wide
         >
           <div className="flex gap-8 items-start w-full">
@@ -505,7 +492,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[14].number}
           label={SLIDES[14].label}
           heading={SLIDES[14].heading}
-          time={SLIDES[14].time}
           wide
         >
           <div className="flex flex-col lg:flex-row gap-8 w-full max-w-6xl items-start">
@@ -537,7 +523,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[15].number}
           label={SLIDES[15].label}
           heading={SLIDES[15].heading}
-          time={SLIDES[15].time}
           columns={[
             { key: "category", label: "Category" },
             { key: "samples", label: "Samples" },
@@ -552,7 +537,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[16].number}
           label={SLIDES[16].label}
           heading={SLIDES[16].heading}
-          time={SLIDES[16].time}
           columns={[
             { key: "system", label: "System" },
             { key: "accuracy", label: "Accuracy" },
@@ -574,7 +558,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[17].number}
           label={SLIDES[17].label}
           heading={SLIDES[17].heading}
-          time={SLIDES[17].time}
           wide
         >
           <div className="flex flex-col lg:flex-row gap-8 items-start w-full max-w-6xl">
@@ -624,7 +607,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[18].number}
           label={SLIDES[18].label}
           heading={SLIDES[18].heading}
-          time={SLIDES[18].time}
           columns={[
             { key: "dim", label: "Dimension" },
             { key: "l1", label: "Layer 1 (Spec-Based)" },
@@ -639,7 +621,6 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
           number={SLIDES[19].number}
           label={SLIDES[19].label}
           heading={SLIDES[19].heading}
-          time={SLIDES[19].time}
           wide
         >
           <div className="flex flex-col lg:flex-row gap-8 w-full max-w-6xl">

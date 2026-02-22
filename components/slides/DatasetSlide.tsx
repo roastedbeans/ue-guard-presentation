@@ -5,7 +5,6 @@ export default function DatasetSlide({
   number,
   label,
   heading,
-  time,
   columns,
   rows,
   pipeline,
@@ -14,7 +13,6 @@ export default function DatasetSlide({
   number: string;
   label: string;
   heading: string;
-  time?: string;
   columns: { key: string; label: string }[];
   rows: Record<string, string | number>[];
   pipeline: string;
@@ -25,7 +23,7 @@ export default function DatasetSlide({
         className="flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-y-auto py-12"
         style={{ minHeight: "100vh", lineHeight: 1.6 }}
       >
-        <SectionHeader number={number} label={label} heading={heading} time={time} />
+        <SectionHeader number={number} label={label} heading={heading} />
         <div className="max-w-4xl">
           <table className="w-full text-base border-collapse mb-6">
             <thead>

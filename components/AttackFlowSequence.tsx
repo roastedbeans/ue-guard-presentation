@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
-const STEP_DELAY_MS = 1600;
+const STEP_DELAY_MS = 700;
 
 const STEPS = [
   { from: "ue", to: "fbs", label: "RRC Connection Request", phase: "RRC", normal: true },

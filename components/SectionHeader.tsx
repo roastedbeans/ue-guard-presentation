@@ -2,14 +2,12 @@ type SectionHeaderProps = {
   number: string;
   label: string;
   heading: string;
-  time?: string;
 };
 
 export default function SectionHeader({
   number,
   label,
   heading,
-  time,
 }: SectionHeaderProps) {
   return (
     <div className="mb-10">
@@ -18,11 +16,6 @@ export default function SectionHeader({
         <span className="text-sm text-zinc-600 uppercase tracking-[0.18em]">
           {label}
         </span>
-        {time && (
-          <span className="ml-auto text-sm text-zinc-500 font-mono">
-            {time}
-          </span>
-        )}
       </div>
       <h2
         className="font-light leading-[1.6] tracking-tight text-zinc-900"
