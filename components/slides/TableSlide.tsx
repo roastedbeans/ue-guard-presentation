@@ -24,12 +24,12 @@ export default function TableSlide({
   return (
     <section id={id} style={{ scrollSnapAlign: "start" }}>
       <div
-        className="flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-y-auto"
+        className="flex flex-col justify-center px-6 md:px-10 lg:px-16 overflow-y-auto"
         style={{ height: "100vh", lineHeight: 1.6 }}
       >
         <SectionHeader number={number} label={label} heading={heading} />
-        <div className="flex gap-12 justify-between items-start w-full max-w-6xl">
-          <div className="flex-1 w-2xl min-w-2xl shrink-0">
+        <div className="flex gap-12 justify-between items-start w-full max-w-7xl">
+          <div className="flex-1 min-w-0 shrink-0">
             <table className="w-full text-base border-collapse">
               <thead>
                 <tr className="border-b-2 border-zinc-300">

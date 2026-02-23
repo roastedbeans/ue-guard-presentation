@@ -183,10 +183,19 @@ export default function PresentationPage() {
           number={SLIDES[8].number}
           label={SLIDES[8].label}
           heading={SLIDES[8].heading}
+          wide
         >
-          <p className="text-zinc-700 max-w-2xl">
-            {emphasize((SLIDES[8] as { methodology: string }).methodology, ["Layer 1", "timed automata", "UPPAAL", "Layers 2 and 3"])}
-          </p>
+          <figure className="w-full max-w-6xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/behavior_rules.png"
+              alt="Layer 1 specification-based behavior rules (BR-1 to BR-14) with RRC/NAS state machine context"
+              className="w-full rounded border border-zinc-200"
+            />
+            <figcaption className="text-xs text-zinc-500 mt-2">
+              Fig. 4. {(SLIDES[8] as { figureCaption: string }).figureCaption}
+            </figcaption>
+          </figure>
         </ContentSlide>
 
         <ContentSlide
@@ -194,6 +203,17 @@ export default function PresentationPage() {
           number={SLIDES[9].number}
           label={SLIDES[9].label}
           heading={SLIDES[9].heading}
+        >
+          <p className="text-zinc-700 max-w-2xl">
+            {emphasize((SLIDES[9] as { methodology: string }).methodology, ["Layer 1", "timed automata", "UPPAAL", "Layers 2 and 3"])}
+          </p>
+        </ContentSlide>
+
+        <ContentSlide
+          id={SLIDES[10].id}
+          number={SLIDES[10].number}
+          label={SLIDES[10].label}
+          heading={SLIDES[10].heading}
           wide
         >
           <div className="max-w-6xl flex gap-6 items-start flex-wrap">
@@ -265,10 +285,10 @@ checkBR14: if msg == DETACH_REQUEST (downlink)
         </ContentSlide>
 
         <ContentSlide
-          id={SLIDES[10].id}
-          number={SLIDES[10].number}
-          label={SLIDES[10].label}
-          heading={SLIDES[10].heading}
+          id={SLIDES[11].id}
+          number={SLIDES[11].number}
+          label={SLIDES[11].label}
+          heading={SLIDES[11].heading}
           wide
         >
           <div className="max-w-6xl flex gap-6 items-start flex-wrap">
@@ -313,10 +333,10 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
         </ContentSlide>
 
         <ContentSlide
-          id={SLIDES[11].id}
-          number={SLIDES[11].number}
-          label={SLIDES[11].label}
-          heading={SLIDES[11].heading}
+          id={SLIDES[12].id}
+          number={SLIDES[12].number}
+          label={SLIDES[12].label}
+          heading={SLIDES[12].heading}
         >
           <table className="w-full text-base border-collapse max-w-xl mb-4">
             <thead>
@@ -328,7 +348,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
               </tr>
             </thead>
             <tbody>
-              {((SLIDES[11] as { results: { property: string; query: string; count: number; result: string }[] }).results).map((r, i) => (
+              {((SLIDES[12] as { results: { property: string; query: string; count: number; result: string }[] }).results).map((r, i) => (
                 <tr key={i} className="border-b border-zinc-200">
                   <td className="py-2">{r.property}</td>
                   <td className="py-2 font-mono text-sm">{r.query}</td>
@@ -339,24 +359,24 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
             </tbody>
           </table>
           <p className="text-zinc-800 font-semibold">
-            {emphasize((SLIDES[11] as { total: string }).total, ["29/29"])}
+            {emphasize((SLIDES[12] as { total: string }).total, ["29/29"])}
           </p>
         </ContentSlide>
 
         <ContentSlide
-          id={SLIDES[12].id}
-          number={SLIDES[12].number}
-          label={SLIDES[12].label}
-          heading={SLIDES[12].heading}
+          id={SLIDES[13].id}
+          number={SLIDES[13].number}
+          label={SLIDES[13].label}
+          heading={SLIDES[13].heading}
           wide
         >
           <div className="flex gap-8 items-start">
             <div className="flex-1 min-w-0 max-w-2xl pr-4 space-y-5">
               <p className="text-base leading-relaxed text-zinc-700">
-                {emphasize((SLIDES[12] as { goal: string }).goal, ["normal traffic", "rarity", "common", "rare"])}
+                {emphasize((SLIDES[13] as { goal: string }).goal, ["normal traffic", "rarity", "common", "rare"])}
               </p>
               <ol className="space-y-4 list-none pl-0">
-                {((SLIDES[12] as { steps: { step: number; title: string; desc: string; stateExamples?: { network: string; protocolDirection: string; messageType: string }[] }[] }).steps).map((s) => (
+                {((SLIDES[13] as { steps: { step: number; title: string; desc: string; stateExamples?: { network: string; protocolDirection: string; messageType: string }[] }[] }).steps).map((s) => (
                   <li key={s.step} className="flex gap-3">
                     <span className="shrink-0 w-7 h-7 rounded-full bg-zinc-200 text-zinc-700 text-sm font-semibold flex items-center justify-center">
                       {s.step}
@@ -401,7 +421,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                   Training result
                 </p>
                 <p className="text-base font-semibold text-zinc-800 tracking-tight">
-                  {(SLIDES[12] as { trainingResult: string }).trainingResult}
+                  {(SLIDES[13] as { trainingResult: string }).trainingResult}
                 </p>
               </div>
             </div>
@@ -412,21 +432,21 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
         </ContentSlide>
 
         <ContentSlide
-          id={SLIDES[13].id}
-          number={SLIDES[13].number}
-          label={SLIDES[13].label}
-          heading={SLIDES[13].heading}
+          id={SLIDES[14].id}
+          number={SLIDES[14].number}
+          label={SLIDES[14].label}
+          heading={SLIDES[14].heading}
           wide
         >
           <div className="flex gap-8 items-start w-full">
             <div className="flex-1 min-w-0 max-w-2xl">
               <p className="mb-3 text-zinc-600 text-base leading-relaxed">
-                {emphasize((SLIDES[13] as { intro: string }).intro, ["surprising", "rare", "lower probability", "self-information", "surprisal"])}
+                {emphasize((SLIDES[14] as { intro: string }).intro, ["surprising", "rare", "lower probability", "self-information", "surprisal"])}
               </p>
               <div className="mb-4">
-                <p className="font-mono text-zinc-800 text-lg font-semibold">{emphasize((SLIDES[13] as { formula: string }).formula, ["max_surprise", "-log₂(P)"])}</p>
-                {"formulaNote" in SLIDES[13] && (SLIDES[13] as { formulaNote?: string }).formulaNote && (
-                  <p className="mt-1 text-base text-zinc-600">{emphasize((SLIDES[13] as { formulaNote: string }).formulaNote, ["max_surprise"])}</p>
+                <p className="font-mono text-zinc-800 text-lg font-semibold">{emphasize((SLIDES[14] as { formula: string }).formula, ["max_surprise", "-log₂(P)"])}</p>
+                {"formulaNote" in SLIDES[14] && (SLIDES[14] as { formulaNote?: string }).formulaNote && (
+                  <p className="mt-1 text-base text-zinc-600">{emphasize((SLIDES[14] as { formulaNote: string }).formulaNote, ["max_surprise"])}</p>
                 )}
               </div>
               <table className="w-full text-base border-collapse mb-4 max-w-xl">
@@ -437,7 +457,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                   </tr>
                 </thead>
                 <tbody>
-                  {((SLIDES[13] as { scoreTable: { scenario: string; score: string }[] }).scoreTable).map((r, i) => (
+                  {((SLIDES[14] as { scoreTable: { scenario: string; score: string }[] }).scoreTable).map((r, i) => (
                     <tr key={i} className="border-b border-zinc-200">
                       <td className="py-2">{r.scenario}</td>
                       <td className="py-2 font-mono">{r.score}</td>
@@ -446,10 +466,10 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                 </tbody>
               </table>
               <p className="text-zinc-600 text-base leading-relaxed">
-                {emphasize((SLIDES[13] as { combined: string }).combined, ["0.7", "0.3", "Behavioral patterns"])}
+                {emphasize((SLIDES[14] as { combined: string }).combined, ["0.7", "0.3", "Behavioral patterns"])}
               </p>
             </div>
-            {"rarityTable" in SLIDES[13] && (SLIDES[13] as { rarityTable?: { type: string; weight: string; desc: string; example: string }[] }).rarityTable && (
+            {"rarityTable" in SLIDES[14] && (SLIDES[14] as { rarityTable?: { type: string; weight: string; desc: string; example: string }[] }).rarityTable && (
               <div className="shrink-0 w-2xl border-l border-zinc-200 pl-8">
                 <p className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-3">Rarity components</p>
                 <table className="w-full text-base border-collapse border border-zinc-200 rounded overflow-hidden">
@@ -462,7 +482,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                     </tr>
                   </thead>
                   <tbody>
-                    {((SLIDES[13] as { rarityTable: { type: string; weight: string; desc: string; example: string | string[] }[] }).rarityTable).map((r, i) => (
+                    {((SLIDES[14] as { rarityTable: { type: string; weight: string; desc: string; example: string | string[] }[] }).rarityTable).map((r, i) => (
                       <tr key={i} className="border-t border-zinc-200">
                         <td className="py-2 px-3 font-semibold text-zinc-800 text-base">{r.type}</td>
                         <td className="py-2 px-3 text-zinc-700 font-mono text-base">{r.weight}</td>
@@ -488,26 +508,26 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
         </ContentSlide>
 
         <ContentSlide
-          id={SLIDES[14].id}
-          number={SLIDES[14].number}
-          label={SLIDES[14].label}
-          heading={SLIDES[14].heading}
+          id={SLIDES[15].id}
+          number={SLIDES[15].number}
+          label={SLIDES[15].label}
+          heading={SLIDES[15].heading}
           wide
         >
           <div className="flex flex-col lg:flex-row gap-8 w-full max-w-6xl items-start">
             <div className="flex-1 min-w-0 max-w-2xl shrink-0">
               <p className="mb-4 text-base leading-relaxed text-zinc-600">
-                {emphasize((SLIDES[14] as { purpose: string }).purpose, ["optimal anomaly threshold", "labeled data", "adaptive", "stability"])}
+                {emphasize((SLIDES[15] as { purpose: string }).purpose, ["optimal anomaly threshold", "labeled data", "adaptive", "stability"])}
               </p>
               <div className="mb-6 rounded-lg border border-zinc-200 bg-zinc-100/80 px-4 py-3 max-w-lg">
                 <p className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-1">Learned threshold</p>
                 <p className="text-lg font-semibold text-zinc-800">
-                  θ_anomaly = {(SLIDES[14] as { threshold: string }).threshold}
+                  θ_anomaly = {(SLIDES[15] as { threshold: string }).threshold}
                 </p>
               </div>
               <p className="text-sm font-medium text-zinc-600 mb-2">Decision logic</p>
               <CodeBlock
-                code={((SLIDES[14] as { decision: string[] }).decision || []).join("\n")}
+                code={((SLIDES[15] as { decision: string[] }).decision || []).join("\n")}
                 size="base"
                 className="w-lg overflow-x-auto"
               />
@@ -519,24 +539,24 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
         </ContentSlide>
 
         <DatasetSlide
-          id={SLIDES[15].id}
-          number={SLIDES[15].number}
-          label={SLIDES[15].label}
-          heading={SLIDES[15].heading}
+          id={SLIDES[16].id}
+          number={SLIDES[16].number}
+          label={SLIDES[16].label}
+          heading={SLIDES[16].heading}
           columns={[
             { key: "category", label: "Category" },
             { key: "samples", label: "Samples" },
             { key: "examples", label: "Examples" },
           ]}
-          rows={(SLIDES[15] as { table: { category: string; samples: number; examples: string }[] }).table}
-          pipeline={(SLIDES[15] as { pipeline: string }).pipeline}
+          rows={(SLIDES[16] as { table: { category: string; samples: number; examples: string }[] }).table}
+          pipeline={(SLIDES[16] as { pipeline: string }).pipeline}
         />
 
         <TableSlide
-          id={SLIDES[16].id}
-          number={SLIDES[16].number}
-          label={SLIDES[16].label}
-          heading={SLIDES[16].heading}
+          id={SLIDES[17].id}
+          number={SLIDES[17].number}
+          label={SLIDES[17].label}
+          heading={SLIDES[17].heading}
           columns={[
             { key: "system", label: "System" },
             { key: "accuracy", label: "Accuracy" },
@@ -548,16 +568,16 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
             { key: "tnr", label: "TNR" },
             { key: "fpr", label: "FPR" },
           ]}
-          rows={(SLIDES[16] as { resultsTable: Record<string, string | number>[] }).resultsTable}
-          keyGap={(SLIDES[16] as { separation: string }).separation}
+          rows={(SLIDES[17] as { resultsTable: Record<string, string | number>[] }).resultsTable}
+          keyGap={(SLIDES[17] as { separation: string }).separation}
           visual={<ResultsBarChart />}
         />
 
         <ContentSlide
-          id={SLIDES[17].id}
-          number={SLIDES[17].number}
-          label={SLIDES[17].label}
-          heading={SLIDES[17].heading}
+          id={SLIDES[18].id}
+          number={SLIDES[18].number}
+          label={SLIDES[18].label}
+          heading={SLIDES[18].heading}
           wide
         >
           <div className="flex flex-col lg:flex-row gap-8 items-start w-full max-w-6xl">
@@ -573,7 +593,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                   </tr>
                 </thead>
                 <tbody>
-                  {((SLIDES[17] as { performanceTable: Record<string, string | number>[] }).performanceTable).map((row, i) => (
+                  {((SLIDES[18] as { performanceTable: Record<string, string | number>[] }).performanceTable).map((row, i) => (
                     <tr
                       key={i}
                       className={`border-b border-zinc-200 text-zinc-700 ${row.system === "UE-Guard" ? "bg-zinc-100" : ""}`}
@@ -588,7 +608,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
                 </tbody>
               </table>
               <ul className="mt-4 grid grid-cols-1 gap-y-1.5">
-                {((SLIDES[17] as { noteBullets: { label: string; value: string }[] }).noteBullets).map((b, i) => (
+                {((SLIDES[18] as { noteBullets: { label: string; value: string }[] }).noteBullets).map((b, i) => (
                   <li key={i} className="flex gap-2 text-sm text-zinc-600">
                     <span className="font-medium text-zinc-700 shrink-0">{b.label}:</span>
                     <span>{b.value}</span>
@@ -603,17 +623,17 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
         </ContentSlide>
 
         <TableSlide
-          id={SLIDES[18].id}
-          number={SLIDES[18].number}
-          label={SLIDES[18].label}
-          heading={SLIDES[18].heading}
+          id={SLIDES[19].id}
+          number={SLIDES[19].number}
+          label={SLIDES[19].label}
+          heading={SLIDES[19].heading}
           columns={[
             { key: "dim", label: "Dimension" },
             { key: "l1", label: "Layer 1 (Spec-Based)" },
             { key: "l2", label: "Layer 2 (Probabilistic)" },
           ]}
-          rows={(SLIDES[18] as { table: { dim: string; l1: string; l2: string }[] }).table}
-          keyGap={(SLIDES[18] as { together: string }).together}
+          rows={(SLIDES[19] as { table: { dim: string; l1: string; l2: string }[] }).table}
+          keyGap={(SLIDES[19] as { together: string }).together}
         />
 
         <ContentSlide
@@ -627,7 +647,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
             <div className="flex-1 min-w-0">
               <h3 className="text-zinc-700 text-lg font-semibold mb-3">Key Contributions</h3>
               <ol className="space-y-2 text-zinc-700 text-base leading-relaxed">
-                {((SLIDES[19] as { contributions: string[] }).contributions).map((c, i) => (
+                {((SLIDES[20] as { contributions: string[] }).contributions).map((c, i) => (
                   <li key={i}>
                     {i + 1}. {emphasize(c, i === 1 ? ["Layer 1"] : i === 2 ? ["Layer 2"] : i === 3 ? ["Layer 3"] : ["4G/5G", "IoT", "IoMT", "14", "BR-1–14", "UPPAAL", "29/29", "100%", "19.10 ms", "0.22 MB", "45.8×", "394×", "3GPP"])}
                   </li>
@@ -637,7 +657,7 @@ Checker(id, mask)   // mask = 2^id  (e.g. BR-1: mask=1, BR-10: mask=512)
             <div className="flex-1 min-w-0">
               <h3 className="text-zinc-700 text-lg font-semibold mb-3">Future Work</h3>
               <div className="space-y-4">
-                {((SLIDES[19] as { future: { area: string; items: string[] }[] }).future).map((f, i) => (
+                {((SLIDES[20] as { future: { area: string; items: string[] }[] }).future).map((f, i) => (
                   <div key={i}>
                     <p className="text-base font-medium text-zinc-700 mb-1.5">{emphasize(f.area, ["Deployment", "Dataset", "Layer 2"])}</p>
                     <ul className="space-y-1 text-base text-zinc-600">

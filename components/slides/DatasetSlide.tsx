@@ -20,11 +20,11 @@ export default function DatasetSlide({
   return (
     <section id={id} style={{ scrollSnapAlign: "start" }}>
       <div
-        className="flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-y-auto py-12"
+        className="flex flex-col justify-center px-6 md:px-10 lg:px-16 overflow-y-auto py-12"
         style={{ minHeight: "100vh", lineHeight: 1.6 }}
       >
         <SectionHeader number={number} label={label} heading={heading} />
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           <table className="w-full text-base border-collapse mb-6">
             <thead>
               <tr className="border-b-2 border-zinc-300">

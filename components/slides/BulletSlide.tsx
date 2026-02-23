@@ -23,12 +23,12 @@ export default function BulletSlide({
   return (
     <section id={id} style={{ scrollSnapAlign: "start" }}>
       <div
-        className="flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-y-auto"
+        className="flex flex-col justify-center px-6 md:px-10 lg:px-16 overflow-y-auto"
         style={{ minHeight: "100vh", lineHeight: 1.6 }}
       >
         <SectionHeader number={number} label={label} heading={heading} />
         <div className="flex gap-12 items-start">
-          <ul className="space-y-5 text-base max-w-2xl flex-1 shrink-0">
+          <ul className="space-y-5 text-base max-w-3xl flex-1 shrink-0">
           {bullets.map((b, i) => (
             <li key={i}>
               <span className="text-zinc-900">{emphasizeKeywords ? emphasize(b.main, emphasizeKeywords) : b.main}</span>
