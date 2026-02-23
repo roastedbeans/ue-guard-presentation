@@ -190,7 +190,7 @@ export default function PresentationPage() {
             <img
               src="/behavior_rules.png"
               alt="Layer 1 specification-based behavior rules (BR-1 to BR-14) with RRC/NAS state machine context"
-              className="w-full rounded border border-zinc-200"
+              className="w-full rounded"
             />
             <figcaption className="text-xs text-zinc-500 mt-2">
               Fig. 4. {(SLIDES[8] as { figureCaption: string }).figureCaption}
@@ -222,7 +222,7 @@ export default function PresentationPage() {
               <img
                 src="/uppaal/detection_agent.png"
                 alt="UPPAAL Detection_Agent template"
-                className="w-full rounded border border-zinc-200"
+                className="w-full rounded"
               />
               <figcaption className="text-xs text-zinc-500 mt-2 text-center">
                 Fig. 1. UPPAAL Detection_Agent timed automaton.
@@ -297,7 +297,7 @@ checkBR14: if msg == DETACH_REQUEST (downlink)
               <img
                 src="/uppaal/checker.png"
                 alt="UPPAAL Checker template"
-                className="w-full rounded border border-zinc-200"
+                className="w-full rounded"
               />
               <figcaption className="text-xs text-zinc-500 mt-2 text-center">
                 Fig. 2. UPPAAL Checker parameterized template.
